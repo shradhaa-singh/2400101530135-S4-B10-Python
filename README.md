@@ -1,18 +1,66 @@
-# React + Vite
+# 🚀 Multi-Utility React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A modern React-based multi-page web application that combines essential mini-tools like authentication, number utilities, and theme customization in one clean interface.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Overview
+This project is a **multi-page React application** where the main dashboard connects to 7 different functional pages.  
+It demonstrates **core React concepts, routing, UI design, and logical problem-solving** in a single project.
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## ✨ Features
+- 🏠 Main Dashboard – Central navigation page  
+- 🔢 Counter App – Increment, decrement, reset  
+- 🔐 Login Page – User login interface  
+- 📝 Registration Page – User signup form  
+- 🔁 Palindrome Checker – Check if a string is palindrome  
+- 🔍 Prime Number Checker – Validate prime numbers  
+- 🎨 Theme Toggle – Switch between aesthetic themes  
+- 📱 Responsive Design  
 
-Note: This will impact Vite dev & build performances.
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
+- **Frontend:** React (Vite)  
+- **Styling:** CSS  
+- **Routing:** React Router  
+- **Version Control:** Git & GitHub  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🎨 Theme
+Custom aesthetic color palette used:
+- #003135  
+- #024950  
+- #0FA4AF  
+- #AFDDE5  
+
+---
+
+---
+
+## ⚙️ Installation & Setup
+
+1. Clone the repository  
+git clone https://github.com/shradhaa-singh/2400101530135-S4-B10-Python.git
+
+2. Navigate to the project  
+cd 2400101530135-S4-B10-Python
+
+3. Install dependencies  
+npm install
+
+4. Run the project  
+npm run dev
+
+## 🎯 Learning Outcomes
+- React components & props  
+- React Router navigation  
+- State management using useState  
+- Logical problem-solving  
+- UI structuring and design  
+
+## 👩‍💻 Author
+**Shradha Singh**    
