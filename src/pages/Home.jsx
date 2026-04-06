@@ -5,13 +5,16 @@ const Home = () => {
   const navigate = useNavigate();
 
   const pages = [
-    ["Counter", "/counter"],
-    ["Login", "/login"],
-    ["Register", "/register"],
-    ["Palindrome", "/palindrome"],
-    ["Prime Checker", "/prime"],
-    ["Toggle", "/toggle"],
-    ["Theme", "/theme"],
+    ["Counter", "/counter", "Track a live count with instant increment, decrement, and reset controls."],
+    ["Calculator", "/calculator", "Use a polished calculator with a full keypad for quick arithmetic."],
+    ["Login", "/login", "Preview a clean authentication form with email and password inputs."],
+    ["Register", "/register", "Open the registration form layout with modern input styling."],
+    ["Palindrome", "/palindrome", "Check whether any text reads the same forwards and backwards."],
+    ["Prime Checker", "/prime", "Test if a number is prime and get the result immediately."],
+    ["Toggle", "/toggle", "Switch UI state on and off with a compact interactive control."],
+    ["Theme", "/theme", "Flip between dark and light application themes."],
+    ["Weather", "/weather", "Search current weather conditions for any city."],
+    ["Map", "/map", "Explore place details and view an embedded map."],
   ];
 
   return (
@@ -38,8 +41,8 @@ const Home = () => {
               style={{
                 padding: "22px",
                 borderRadius: "24px",
-                background: "rgba(255,255,255,0.74)",
-                border: "1px solid rgba(15, 23, 42, 0.08)",
+                background: palette.surface,
+                border: `1px solid ${palette.line}`,
                 boxShadow: "0 16px 36px rgba(15, 23, 42, 0.08)",
                 cursor: "pointer",
                 transition: "transform 0.2s ease, box-shadow 0.2s ease",
@@ -61,7 +64,7 @@ const Home = () => {
                   borderRadius: "14px",
                   display: "grid",
                   placeItems: "center",
-                  background: "linear-gradient(135deg, #ccfbf1, #f0fdfa)",
+                  background: `linear-gradient(135deg, ${palette.accentSoft}, ${palette.surfaceStrong})`,
                   color: palette.accent,
                   fontWeight: 800,
                   marginBottom: "18px",

@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { palette } from "../ui";
 
-const Navbar = ({ theme }) => {
+const Navbar = () => {
   const nav = {
     display: "flex",
     justifyContent: "space-between",
@@ -12,8 +12,8 @@ const Navbar = ({ theme }) => {
     width: "min(1180px, calc(100% - 24px))",
     boxSizing: "border-box",
     backdropFilter: "blur(14px)",
-    background: theme === "dark" ? "rgba(15, 23, 42, 0.28)" : "rgba(255, 255, 255, 0.62)",
-    border: `1px solid ${theme === "dark" ? "rgba(255,255,255,0.12)" : "rgba(15,23,42,0.08)"}`,
+    background: palette.navBg,
+    border: `1px solid ${palette.navBorder}`,
     borderRadius: "24px",
     position: "sticky",
     top: "14px",
@@ -33,17 +33,20 @@ const Navbar = ({ theme }) => {
   const links = [
     ["Home", "/"],
     ["Counter", "/counter"],
+    ["Calculator", "/calculator"],
     ["Login", "/login"],
     ["Register", "/register"],
     ["Palindrome", "/palindrome"],
     ["Prime", "/prime"],
     ["Toggle", "/toggle"],
     ["Theme", "/theme"],
+    ["Weather","/weather"],
+    ["Map","/map"],
   ];
 
   const activeLink = {
-    background: theme === "dark" ? "rgba(45, 212, 191, 0.18)" : palette.accentSoft,
-    color: theme === "dark" ? "#ccfbf1" : palette.accent,
+    background: palette.accentSoft,
+    color: palette.activeText,
   };
 
   return (
@@ -58,7 +61,7 @@ const Navbar = ({ theme }) => {
         }}
       >
         <strong style={{ fontSize: "1.05rem", letterSpacing: "0.04em" }}>PortFolio</strong>
-        <span style={{ fontSize: "0.8rem", opacity: 0.78 }}>Built with React</span>
+        <span style={{ fontSize: "0.8rem", opacity: 0.78 }}>Built with React </span>
       </Link>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", justifyContent: "flex-end" }}>
         {links.map(([label, to]) => (
