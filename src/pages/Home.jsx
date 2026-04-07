@@ -5,6 +5,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const pages = [
+    ["About Me","/about","Know more about me and download my resume"],
     ["Counter", "/counter", "Track a live count with instant increment, decrement, and reset controls."],
     ["Calculator", "/calculator", "Use a polished calculator with a full keypad for quick arithmetic."],
     ["Login", "/login", "Preview a clean authentication form with email and password inputs."],
@@ -14,7 +15,7 @@ const Home = () => {
     ["Toggle", "/toggle", "Switch UI state on and off with a compact interactive control."],
     ["Theme", "/theme", "Flip between dark and light application themes."],
     ["Weather", "/weather", "Search current weather conditions for any city."],
-    ["Map", "/map", "Explore place details and view an embedded map."],
+    ["Map", "/map", "Explore place details and view an embedded map."]
   ];
 
   return (

@@ -15,6 +15,7 @@ import NotFound from "./pages/NotFound";
 import Weather from "./pages/Weather";
 import Map from "./pages/Map";
 import Calculator from "./pages/Calculator";
+import About from "./pages/About";
 
 function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem("app-theme") || "dark");
@@ -40,6 +41,7 @@ function App() {
         <Route path="/weather" element={<Weather/>}/>
         <Route path="/map" element={<Map/>}/>
         <Route path="/calculator" element={<Calculator />} />
+        <Route path="/about" element={<About />} />
         <Route path="/*" element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>

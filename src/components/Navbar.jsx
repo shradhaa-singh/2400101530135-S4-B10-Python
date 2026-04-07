@@ -32,6 +32,7 @@ const Navbar = () => {
 
   const links = [
     ["Home", "/"],
+    ["About", "/about"],
     ["Counter", "/counter"],
     ["Calculator", "/calculator"],
     ["Login", "/login"],
@@ -58,9 +59,11 @@ const Navbar = () => {
           color: "inherit",
           display: "grid",
           gap: "2px",
+          whiteSpace: "nowrap",
+          flexShrink: 0,
         }}
       >
-        <strong style={{ fontSize: "1.05rem", letterSpacing: "0.04em" }}>PortFolio</strong>
+        <strong style={{ fontSize: "1.05rem", letterSpacing: "0.04em" }}>Shradha Singh</strong>
         <span style={{ fontSize: "0.8rem", opacity: 0.78 }}>Built with React </span>
       </Link>
       <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", justifyContent: "flex-end" }}>
