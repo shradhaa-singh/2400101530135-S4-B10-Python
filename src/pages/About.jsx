@@ -16,7 +16,7 @@ const About = () => {
     email: "shradhasingh72558@gmail.com",
     linkedin: "https://linkedin.com/in/shradhaasingh",
     github: "https://github.com/shradhaa-singh",
-    profilePhoto: "./public/your-photo.jpg",
+    profilePhoto: "photo.jpeg",
     resumeFile: "./public/resumeFile.pdf",
   };
 
@@ -159,7 +159,7 @@ const About = () => {
 
         {/* TIMELINE */}
         <div>
-          <div style={sectionTitle}>Journey</div>
+          <div style={sectionTitle}>Education</div>
 
           <div style={text}>
             2024 - Present: B.Tech in Computer Science (AI/ML) (Grade: 8.5+)
