@@ -23,13 +23,18 @@ const About = () => {
   const projects = [
     {
       title: "KrishiRakshhakAI",
-      description: "description",
+      description: "An intelligent farming assistant that brings AI-powered crop disease diagnosis, weather forecasting, and voice-enabled agricultural guidance to your fingertips.",
       repoUrl: "https://github.com/shradhaa-singh/KrishiRakshhakAI.git",
     },
     {
       title: "Online Retail Customer Segmentation",
-      description: "description",
+      description: "The Online Retail Customer Segmentation project focuses on analyzing real-world e-commerce transaction data to extract meaningful business insights.",
       repoUrl: "https://github.com/shradhaa-singh/Online-Retail-Customer-Segmentation.git",
+    },
+    {
+      title: "Library Management System",
+      description: "A desktop library management application built with Python, Tkinter, and SQLite.",
+      repoUrl: "https://github.com/shradhaa-singh/LibraryManagementSystem.git",
     },
   ];
 
