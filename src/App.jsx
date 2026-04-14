@@ -15,7 +15,6 @@ import NotFound from "./pages/NotFound";
 import Weather from "./pages/Weather";
 import Map from "./pages/Map";
 import Calculator from "./pages/Calculator";
-import About from "./pages/About";
 import ThemePalette from "./components/ThemePalette";
 
 function App() {
@@ -42,7 +41,6 @@ function App() {
         <Route path="/weather" element={<Weather/>}/>
         <Route path="/map" element={<Map/>}/>
         <Route path="/calculator" element={<Calculator />} />
-        <Route path="/about" element={<About />} />
         <Route path="/*" element={<NotFound/>}/>
       </Routes>
       <ThemePalette theme={theme} setTheme={setTheme} />

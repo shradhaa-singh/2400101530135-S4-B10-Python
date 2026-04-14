@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { palette } from "../ui";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(() => window.innerWidth <= 860);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -22,7 +23,7 @@ const Navbar = () => {
 
   useEffect(() => {
     setIsMenuOpen(false);
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   const nav = {
     display: "grid",
@@ -59,22 +60,26 @@ const Navbar = () => {
 
   const links = [
     ["Home", "/"],
-    ["About", "/about"],
-    ["Counter", "/counter"],
-    ["Calculator", "/calculator"],
-    ["Login", "/login"],
-    ["Register", "/register"],
-    ["Palindrome", "/palindrome"],
-    ["Prime", "/prime"],
-    ["Toggle", "/toggle"],
-    ["Theme", "/theme"],
-    ["Weather","/weather"],
-    ["Map","/map"],
+    ["Work", "/#react-work"],
+    ["Contact", "/#contact-me"],
   ];
 
   const activeLink = {
     background: palette.accentSoft,
     color: palette.activeText,
+  };
+
+  const contactButton = {
+    textDecoration: "none",
+    border: "none",
+    background: `linear-gradient(135deg, ${palette.accent}, ${palette.accentAlt})`,
+    color: "#ffffff",
+    fontWeight: 700,
+    padding: "10px 16px",
+    borderRadius: "999px",
+    fontSize: "0.95rem",
+    cursor: "pointer",
+    boxShadow: "0 14px 30px rgba(15, 23, 42, 0.14)",
   };
 
   const menuButton = {
@@ -112,23 +117,29 @@ const Navbar = () => {
     [isMenuOpen, isMobile]
   );
 
+  const goToSection = (sectionId) => {
+    navigate(`/#${sectionId}`);
+  };
+
+  const isHashActive = (hash) => location.pathname === "/" && location.hash === hash;
+
   return (
     <div style={nav}>
       <div style={topRow}>
-      <Link
-        to="/"
-        style={{
-          textDecoration: "none",
-          color: "inherit",
-          display: "grid",
-          gap: "2px",
-          whiteSpace: "nowrap",
-          flexShrink: 0,
-        }}
-      >
-        <strong style={{ fontSize: "1.05rem", letterSpacing: "0.04em" }}>Shradha Singh</strong>
-        <span style={{ fontSize: "0.8rem", opacity: 0.78 }}>Built with React </span>
-      </Link>
+        <Link
+          to="/"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+            display: "grid",
+            gap: "2px",
+            whiteSpace: "nowrap",
+            flexShrink: 0,
+          }}
+        >
+          <strong style={{ fontSize: "1.05rem", letterSpacing: "0.04em" }}>Shradha Singh</strong>
+          <span style={{ fontSize: "0.8rem", opacity: 0.78 }}>React Portfolio</span>
+        </Link>
 
         <button
           type="button"
@@ -142,34 +153,85 @@ const Navbar = () => {
       </div>
 
       <div style={desktopLinks}>
-        {links.map(([label, to]) => (
-          <NavLink
-            key={to}
-            to={to}
-            style={({ isActive }) => ({
-              ...link,
-              ...(isActive ? activeLink : {}),
-            })}
-          >
-            {label}
-          </NavLink>
-        ))}
+        {links.map(([label, to]) => {
+          if (to.startsWith("/#")) {
+            return (
+              <button
+                key={to}
+                type="button"
+                onClick={() => goToSection(to.slice(2))}
+                style={{
+                  ...link,
+                  ...(isHashActive(to.slice(1)) ? activeLink : {}),
+                  border: "none",
+                  background: isHashActive(to.slice(1)) ? palette.accentSoft : "transparent",
+                  cursor: "pointer",
+                }}
+              >
+                {label}
+              </button>
+            );
+          }
+
+          return (
+            <NavLink
+              key={to}
+              to={to}
+              style={({ isActive }) => ({
+                ...link,
+                ...(isActive ? activeLink : {}),
+              })}
+            >
+              {label}
+            </NavLink>
+          );
+        })}
+
+        <button type="button" onClick={() => goToSection("contact-me")} style={contactButton}>
+          Hire Me
+        </button>
       </div>
 
       <div style={mobileLinks}>
-        {links.map(([label, to]) => (
-          <NavLink
-            key={`${to}-mobile`}
-            to={to}
-            style={({ isActive }) => ({
-              ...link,
-              ...(isActive ? activeLink : {}),
-              textAlign: "center",
-            })}
-          >
-            {label}
-          </NavLink>
-        ))}
+        {links.map(([label, to]) => {
+          if (to.startsWith("/#")) {
+            return (
+              <button
+                key={`${to}-mobile`}
+                type="button"
+                onClick={() => goToSection(to.slice(2))}
+                style={{
+                  ...link,
+                  ...(isHashActive(to.slice(1)) ? activeLink : {}),
+                  textAlign: "center",
+                  border: "none",
+                  background: isHashActive(to.slice(1)) ? palette.accentSoft : "transparent",
+                  cursor: "pointer",
+                }}
+              >
+                {label}
+              </button>
+            );
+          }
+
+          return (
+            <NavLink
+              key={`${to}-mobile`}
+              to={to}
+              style={({ isActive }) => ({
+                ...link,
+                ...(isActive ? activeLink : {}),
+                textAlign: "center",
+              })}
+            >
+              {label}
+            </NavLink>
+          );
+        })}
+
+        <button type="button" onClick={() => goToSection("contact-me")} style={contactButton}>
+          Hire Me
+        </button>
       </div>
     </div>
   );
