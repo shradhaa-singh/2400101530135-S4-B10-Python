@@ -280,13 +280,13 @@ const Home = () => {
             >
               <strong style={{ display: "block", fontSize: "1rem" }}>{profile.name}</strong>
               <span style={{ fontSize: "0.86rem", opacity: 0.88 }}>
-                {profile.title} • AI/ML Enthusiast
+                {profile.title}
               </span>
             </div>
 
             <img
               src="/photo.jpeg"
-              alt="Shradha Singh portrait"
+              alt="Shradha Singh"
               style={{
                 width: "100%",
                 height: "100%",
