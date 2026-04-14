@@ -2,17 +2,10 @@ import {
   formCard,
   pageShell,
   palette,
+  themeOptions,
 } from "../ui";
 
 const Theme = ({ theme, setTheme }) => {
-  const themes = [
-    { name: "dark", label: "Dark", color: "#003135" },
-    { name: "light", label: "Light", color: "#AFDDE5" },
-    { name: "ocean", label: "Ocean", color: "#2C5364" },
-    { name: "pastel", label: "Pastel", color: "#fbc2eb" },
-    { name: "sunset", label: "Sunset", color: "#ff7e5f" },
-  ];
-
   return (
     <div style={pageShell}>
       <div style={{ ...formCard, textAlign: "center" }}>
@@ -72,7 +65,7 @@ const Theme = ({ theme, setTheme }) => {
             gap: "12px",
           }}
         >
-          {themes.map((t) => (
+          {themeOptions.map((t) => (
             <button
               key={t.name}
               onClick={() => setTheme(t.name)}
@@ -83,8 +76,8 @@ const Theme = ({ theme, setTheme }) => {
                   theme === t.name
                     ? `2px solid ${palette.accent}`
                     : `1px solid ${palette.line}`,
-                background: t.color,
-                color: "#fff",
+                background: t.swatch,
+                color: t.name === "light" || t.name === "pastel" ? "#0f172a" : "#fff",
                 cursor: "pointer",
                 fontWeight: "bold",
                 transform: theme === t.name ? "scale(1.05)" : "scale(1)",

@@ -126,6 +126,34 @@ export const themePresets = {
   },
 };
 
+export const themeOptions = [
+  {
+    name: "dark",
+    label: "Dark",
+    swatch: "linear-gradient(135deg, #052e2b, #0f172a 60%, #0f766e)",
+  },
+  {
+    name: "light",
+    label: "Light",
+    swatch: "linear-gradient(135deg, #ecfeff, #f8fafc 60%, #cffafe)",
+  },
+  {
+    name: "ocean",
+    label: "Ocean",
+    swatch: "linear-gradient(135deg, #0f2027, #203a43 52%, #2c5364)",
+  },
+  {
+    name: "pastel",
+    label: "Pastel",
+    swatch: "linear-gradient(135deg, #fff1f2, #fdf2f8 52%, #fae8ff)",
+  },
+  {
+    name: "sunset",
+    label: "Sunset",
+    swatch: "linear-gradient(135deg, #431407, #9a3412 48%, #fb7185)",
+  },
+];
+
 export const applyTheme = (themeName) => {
   const selectedTheme = themePresets[themeName] || themePresets.dark;
   const root = document.documentElement;

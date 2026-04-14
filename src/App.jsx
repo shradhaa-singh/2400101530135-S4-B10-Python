@@ -16,6 +16,7 @@ import Weather from "./pages/Weather";
 import Map from "./pages/Map";
 import Calculator from "./pages/Calculator";
 import About from "./pages/About";
+import ThemePalette from "./components/ThemePalette";
 
 function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem("app-theme") || "dark");
@@ -28,7 +29,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar theme={theme} />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/counter" element={<Counter />} />
@@ -44,6 +45,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/*" element={<NotFound/>}/>
       </Routes>
+      <ThemePalette theme={theme} setTheme={setTheme} />
     </BrowserRouter>
   );
 }

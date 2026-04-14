@@ -6,10 +6,6 @@ import {
 } from "../ui";
 
 const About = () => {
-  // TODO: replace these placeholders with your actual portfolio data.
-  // - Add your profile photo in `/public` and update `profilePhoto`.
-  // - Add your resume file in `/public` and update `resumeFile`.
-  // Example: profilePhoto: "/shradha-photo.jpg", resumeFile: "/Shradha-Singh-Resume.pdf"
   const profileData = {
     name: "Shradha Singh",
     headline: "AI/ML Enthusiast • React Developer • Problem Solver",
@@ -110,8 +106,6 @@ const About = () => {
           <p style={{ ...text, textAlign: "center" }}>
             {profileData.headline}
           </p>
-
-          {/* TODO: keep your resume PDF in `/public` and update `resumeFile` above. */}
           <a
             href={profileData.resumeFile}
             target="_blank"
@@ -219,21 +213,21 @@ const About = () => {
           <div style={sectionTitle}>Contact</div>
           {/* TODO: update email/linkedin/github in `profileData` above. */}
           <p style={text}>
-            📧{" "}
+            {" "}
             <a href={`mailto:${profileData.email}`} style={linkStyle}>
-              Gmail
+              shradhasingh72558@gmail.com
             </a>
           </p>
           <p style={text}>
-            🔗{" "}
+            {" "}
             <a href={profileData.linkedin} target="_blank" rel="noreferrer" style={linkStyle}>
-              Linkedin
+              Linkdin
             </a>
           </p>
           <p style={text}>
-            💻{" "}
+            {" "}
             <a href={profileData.github} target="_blank" rel="noreferrer" style={linkStyle}>
-              GitHub
+              Github
             </a>
           </p>
         </div>
